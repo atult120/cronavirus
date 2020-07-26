@@ -12,6 +12,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+    <!-- select 2  css -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -111,6 +113,12 @@
     .card-header {
         text-align: center;
     }
+
+    .select2-container {
+        width: 222px !important;
+    }
+
+
 </style>
 
 <body>
@@ -119,7 +127,7 @@
         <h1 class="text-header">COVID-19 Tracker</h1>
         <div class="row">
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <div class="card-header">Total Confirmed Cases</div>
                     <div class="card-body">
                         <p class="confirmed_case count"></p>
@@ -127,7 +135,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <div class="card-header">Total Recovered Cases</div>
                     <div class="card-body">
                         <p class="recovered count"></p>
@@ -135,8 +143,8 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">Total Fatal Cases</div>
+                <div class="card">
+                    <div class="card-header">Total Dead Cases</div>
                     <div class="card-body">
                         <p class="total_deaths count"></p>
                     </div>
@@ -158,7 +166,13 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!-- select2 js  -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
 <script type="text/javascript">
+    $(document).ready(function() {
+        $('#countries').select2();
+    });
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
